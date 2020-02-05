@@ -6,7 +6,7 @@ spec:
   type: NodePort
   selector:
     app: train-schedule
-    label: canary
+    track: canary
   ports:
     - protocol: TCP
       port: 8080
