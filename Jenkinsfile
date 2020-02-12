@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 script {
-                    docker.withRegistry('https://gcr.io', 'kollate-218719') {
+                    docker.withRegistry('https://gcr.io', 'gcr:kollate-218719') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest")
                     }
