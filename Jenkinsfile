@@ -9,6 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
+                echo '$TRIGGER_PARAM'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
