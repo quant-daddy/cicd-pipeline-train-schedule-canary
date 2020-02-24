@@ -5,11 +5,14 @@ pipeline {
         DOCKER_IMAGE_NAME = "kollate-218719/train-schedule"
         CANARY_REPLICAS = "0"
     }
+    parameters {
+        string(name: 'TRIGGER_PARAM', defaultValue: '', description: 'trigger param description')
+    }
     stages {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                echo "${TRIGGER_PARAM}"
+                echo "${params.TRIGGER_PARAM}"
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
