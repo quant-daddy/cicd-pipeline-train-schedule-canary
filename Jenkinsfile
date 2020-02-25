@@ -6,7 +6,7 @@ pipeline {
         CANARY_REPLICAS = "0"
     }
     parameters {
-        string(name: 'TRIGGER_PARAM', defaultValue: '', description: 'trigger param description')
+        string(name: 'TRIGGER_PARAM', defaultValue: '', description: 'trigger param description yo')
     }
     stages {
         stage('Build') {
